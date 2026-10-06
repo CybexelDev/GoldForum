@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gold Forum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { cream:'#FAF6EE', sand:'#F3EFE6', gold:'#B8935A', ink:'#1C1815', ink2:'#26211C', muted:'#6B635A' },
+  fontFamily: { serif:['"Cormorant Garamond"','Georgia','serif'], sans:['Inter','system-ui','sans-serif'], monts:['Montserrat','system-ui','sans-serif'] }
+}}}
+</script>
+<style>
+  body{font-family:Inter,system-ui,sans-serif;color:#1C1815;background:#FAF6EE}
+  .label{  font-family: 'Montserrat', sans-serif;font-size:11px;letter-spacing:2.75px;text-transform:uppercase;color:#C5A059}
+  .btn{display:inline-block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:14px 26px;transition:.3s}
+  .btn-gold{background:#C5A059;color:#050505}.btn-gold:hover{background:#a37f48}
+  .btn-line{border:1px solid #C5A05999;color:#C5A059}.btn-line:hover{background:rgba(255,255,255,.1)}
+  /* Image slots: replace the background with url('your-image.jpg') */
+  .img{background-size:cover;background-position:center}
+  .g1{background:linear-gradient(135deg,#3b2a18,#8a6a3a 60%,#2a1d10)}
+  .g2{background:linear-gradient(160deg,#c9b99a,#6e5a3c 70%,#2b2013)}
+  .g3{background:linear-gradient(160deg,#d8d2c8,#8d857a 60%,#3a352f)}
+  .g4{background:linear-gradient(160deg,#b98a8a,#6a3b4a 55%,#2e5a45)}
+  .g5{background:linear-gradient(160deg,#6b4a1c,#2a1b0c 70%)}
+  .g6{background:linear-gradient(160deg,#e6dccb,#a89572 70%,#4a3b25)}
+  .g7{background:linear-gradient(160deg,#4a3a2a,#c19a4e 50%,#2a1d10)}
+  .g8{background:linear-gradient(160deg,#a9815a,#4a3220 70%)}
+  :focus-visible{outline:2px solid #B8935A;outline-offset:3px}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="absolute blur-1 font-monts top-0 inset-x-0 z-30 text-white border-b border-[#FFFFFF1A]">
+  <div class="px-6 lg:px-10 h-20 flex items-center justify-between">
+   <a href="#home" class="inline-block">
+  <img src="assets/goldlogo.png" alt="Gold Forum" class="h-10 sm:h-[50px] w-auto">
+</a>
+
+    <nav class="hidden lg:flex gap-10 text-[11px] tracking-[.22em] uppercase">
+      <a href="#home" class="hover:text-gold">Home</a><a href="#about" class="hover:text-gold">About</a><a href="#collections" class="hover:text-gold">Collections</a><a href="#services" class="hover:text-gold">Services</a><a href="#why" class="hover:text-gold">Why Gold Forum</a><a href="#contact" class="hover:text-gold">Contact</a>
+    </nav>
+
+    <!-- Montserrat only on this button -->
+    <a href="#contact" class="hidden lg:block  border border-[#C5A05999] px-5 py-3 text-[11px] text-[#C5A059] tracking-[.22em] uppercase hover:bg-white/10">Enquire Now</a>
+
+    <button id="menuBtn" class="lg:hidden" aria-label="Menu"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h20M3 13h20M3 18h20"/></svg></button>
+  </div>
+
+  <div id="mobileMenu" class="hidden lg:hidden bg-ink/95 px-6 py-6 flex flex-col gap-4 text-[11px] tracking-[.22em] uppercase">
+    <a href="#about">About</a><a href="#collections">Collections</a><a href="#services">Services</a><a href="#why">Why Gold Forum</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen min-h-[100svh] pt-14 flex items-center text-white " style="background:url('assets/goldhero.png') center/cover no-repeat, #2a1d10">
+  <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(14,13,12,.94) 0%,rgba(14,13,12,.82) 40%,rgba(8,8,8,.7) 100%)"></div>
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(10,10,10,.85) 0%,rgba(10,10,10,0) 22%,rgba(10,10,10,0) 70%,rgba(8,8,8,.9) 100%)"></div>
+  <div class="relative px-6 lg:px-12 pt-24 pb-16 w-full">
+    <p class="label text-[12px] font-[500] tracking-[3.3px] mb-6">The Art of Fine Jewellery</p>
+    <h1 class="font-serif font-[200] text-4xl sm:text-5xl lg:text-[72px] leading-[1.05] max-w-[670px]">Timeless Elegance, Crafted to Perfection</h1>
+    <p class="mt-6 font-monts  max-w-[550px] text-sm md:text-[16px] leading-relaxed text-[#D1D5DB] font-[200]">Discover exquisite jewelry crafted with precision, passion, and timeless artistry.</p>
+    <div class="mt-9 flex flex-wrap gap-4 font-monts font-[500]">
+      <a href="#collections" class="btn font-[500] text-[12px] tracking-[2.4px] btn-gold">Explore Collections</a>
+      <a href="#contact" class="btn btn-line tracking-[2.4px] ">Enquire Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-cream py-20 lg:py-28">
+  <div class="px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+    <!-- Image -->
+    <div class="w-full  h-[330px] sm:h-[390px] lg:h-[480px] overflow-hidden">
+      <img
+        src="assets/abtgold.jpg"
+        alt="Gold Forum Craftsmanship"
+        class="w-full h-full object-cover"
+      >
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[600px]">
+
+      <p class="text-[11px] font-monts font-[550] tracking-[.28em] uppercase text-[#C5A059] mb-5">
+        About Gold Forum
+      </p>
+
+      <h2 class="font-serif text-4xl lg:text-[50px] leading-[1.02] text-ink">
+        Where Craftsmanship Meets Elegance
+      </h2>
+
+      <div class="w-[52px] h-[1px] bg-[#C5A059] mt-6"></div>
+
+      <p class="mt-8 text-[14px] leading-[1.7] text-[#57534E]  font-monts font-[300]">
+        Gold Forum brings together timeless jewelry design, modern craftsmanship,
+        and personalized service. The company offers jewelry for retail and wholesale
+        customers, along with customized designs, manufacturing, and bulk-order
+        solutions.
+      </p>
+
+      <div class="mt-8 border-l-2 border-[#C5A059] bg-white/60 pl-5 py-2">
+        <p class="text-[10px] tracking-[2.5px] uppercase text-[#C5A059] mb-1">
+          Our Speciality
+        </p>
+
+        <p class="font-serif font-[400] italic text-[20px] text-[#080807]">
+          Specialises in 14K – 916 foaming jewellery
+        </p>
+      </div>
+      <a
+        href="#services"
+        class="inline-block font-monts mt-10 leading-[16px] text-[12px] tracking-[2.4px] uppercase text-ink font-[600]"
+      >
+        Discover our story&nbsp;&nbsp; →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections" class="bg-sand border-y border-[#E7E5E4] py-20 lg:py-28">
+  <div class="px-6 lg:px-12">
+
+    <!-- Top Content -->
+    <div class="text-center font-monts">
+      <p class="label mb-2 text-[11px] font-[500] leading-[16px] text-[#C5A059] tracking-[2.75px]">Collections</p>
+
+      <h2 class="font-serif text-3xl lg:text-[48px]">
+        Shine in Style
+      </h2>
+
+      <p class="mt-4 text-[14px] text-[#57534E]  font-light">
+        Explore our curated collections, crafted for every celebration and every moment.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+
+<div class="group relative h-[280px] sm:h-[330px] lg:h-[420px] flex items-end text-white p-5 overflow-hidden cursor-pointer bg-[url('./assets/c1.jpg')] bg-cover bg-center transition-transform duration-500 hover:scale-[1.02]">        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="relative z-10 text-left">
+          <p class="text-[8px] tracking-[.25em] uppercase text-[#C5A059]">Timeless &amp; Luxurious</p>
+          <p class="font-serif text-xl mt-1">Gold Jewelry</p>
+        </div>
+      </div>
+
+<div class="group relative h-[280px] sm:h-[330px] lg:h-[420px] flex items-end text-white p-5 overflow-hidden cursor-pointer bg-[url('./assets/c2.jpg')] bg-cover bg-center transition-transform duration-500 hover:scale-[1.02]">        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="relative z-10 text-left">
+          <p class="text-[8px] tracking-[.25em] uppercase text-[#C5A059]">Brilliance &amp; Artistry</p>
+          <p class="font-serif text-xl mt-1">Diamonds</p>
+        </div>
+      </div>
+
+<div class="group relative h-[280px] sm:h-[330px] lg:h-[420px] flex items-end text-white p-5 overflow-hidden cursor-pointer bg-[url('./assets/c3.jpg')] bg-cover bg-center transition-transform duration-500 hover:scale-[1.02]">        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="relative z-10 text-left">
+          <p class="text-[8px] tracking-[.25em] uppercase text-[#C5A059]">Elegance &amp; Style</p>
+          <p class="font-serif text-xl mt-1">Silver</p>
+        </div>
+      </div>
+
+<div class="group relative h-[280px] sm:h-[330px] lg:h-[420px] flex items-end text-white p-5 overflow-hidden cursor-pointer bg-[url('./assets/c4.jpg')] bg-cover bg-center transition-transform duration-500 hover:scale-[1.02]">        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="relative z-10 text-left">
+          <p class="text-[8px] tracking-[.25em] uppercase text-[#C5A059]">Colour &amp; Character</p>
+          <p class="font-serif text-xl mt-1">Birthstones</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<section class="font-monts relative text-white py-20 lg:py-24 bg-[#0E0D0C] overflow-hidden border-t border-gold/30">
+      <div class="absolute inset-0 bg-[url('./assets/quote.jpg')] bg-center bg-cover bg-no-repeat opacity-15"></div>
+
+
+  <div class="relative px-6 lg:px-12">
+    <div class="grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-0 items-center">
+
+      <!-- Left -->
+      <div>
+        <p class="text-[11px] font-medium tracking-[.25em] uppercase text-[#C5A059]">GoldForum Signature</p>
+        <h2 class="mt-5 font-serif italic font-normal text-5xl sm:text-6xl lg:text-[64px] leading-[1.1] text-white">“Every piece tells a story.”</h2>
+        <p class="mt-6 text-[15px] font-light text-white/60">Designed with devotion. Crafted with precision. Made to be remembered.</p>
+      </div>
+
+      <!-- Right -->
+      <div class="lg:border-l lg:border-white/10 lg:pl-10">
+        <ul class="space-y-4 text-[12px] tracking-[.2em] uppercase text-white/85">
+          <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 rounded-full bg-[#C5A059]"></span>Fine Jewellery Manufacturing</li>
+          <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 rounded-full bg-[#C5A059]"></span>Retail &amp; Wholesale</li>
+          <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 rounded-full bg-[#C5A059]"></span>Customised Design Studio</li>
+        </ul>
+        <p class="mt-9 text-[13px] tracking-[.15em] uppercase text-[#C5A059]">Coimbatore</p>
+        <p class="mt-1 text-[13px] tracking-[.15em] uppercase text-white/70">Tamil Nadu · India</p>
+      </div>
+    </div>
+
+    <!-- Bottom row -->
+    <div class="mt-14 lg:mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:justify-between gap-3 text-[11px] tracking-[.2em] uppercase text-white/35">
+      <span>Handcrafted to Signature</span>
+      <span class="hidden sm:block text-white/25">·</span>
+      <span>Genuine Gemstones</span>
+      <span class="hidden sm:block text-white/25">·</span>
+      <span>Bulk Order Solutions</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<!-- SERVICES -->
+<section id="services" class="font-monts bg-[#F8F6F1] py-16 sm:py-20 lg:py-24">
+  <div class="px-6 lg:px-12">
+
+    <!-- Heading -->
+    <div class="text-center">
+      <p class="text-[11px] font-monts font-[550] tracking-[2.75px] uppercase text-[#C5A059]">Services</p>
+      <h2 class="mt-3 font-serif font-normal text-4xl sm:text-5xl text-ink">Crafted Around You</h2>
+      <p class="mt-4 text-[13px] font-light text-muted">From concept to creation, our expertise brings your vision to life.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-12 lg:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+
+      <article class="bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,.05)]">
+        <img src="assets/s1.jpg" alt="Manufacturing Jewelry" class="w-full h-56 sm:h-64 lg:h-56 xl:h-64 object-cover">
+        <h3 class="mt-6 flex items-baseline gap-2 font-serif text-[24px] leading-none text-ink">
+          <span class="font-monts font-[550] leading-4 text-[12px] text-[#C5A059]">01</span>Manufacturing Jewelry
+        </h3>
+        <p class="mt-3 font-monts text-[14px] leading-5 font-light text-[#57534E]">Expert jewelry manufacturing focused on precision, quality, and timeless craftsmanship.</p>
+      </article>
+
+      <article class="bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,.05)]">
+        <img src="assets/s2.jpg" alt="Customised Design" class="w-full h-56 sm:h-64 lg:h-56 xl:h-64 object-cover">
+        <h3 class="mt-6 flex items-baseline gap-2 font-serif text-[24px] leading-none text-ink">
+          <span class="font-monts font-[550] leading-4 text-[12px] text-[#C5A059]">02</span>Customised Design
+        </h3>
+        <p class="mt-3 font-monts text-[14px] leading-5 font-light text-[#57534E]">Personalized jewelry designs created to reflect individual styles, occasions, and stories.</p>
+      </article>
+
+      <article class="bg-white p-5 shadow-[0_2px_10px_rgba(0,0,0,.05)] md:col-span-2 lg:col-span-1">
+        <img src="assets/s3.jpg" alt="Stone Works" class="w-full h-56 sm:h-64 lg:h-56 xl:h-64 object-cover">
+        <h3 class="mt-6 flex items-baseline gap-2 font-serif text-[24px] leading-none text-ink">
+          <span class="font-monts font-[550] leading-4 text-[12px] text-[#C5A059]">03</span>Stone Works
+        </h3>
+        <p class="mt-3 font-monts text-[14px] leading-5 font-light text-[#57534E]">Intricate handcrafted stone work that adds brilliance, character, and elegance to every piece.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CRAFTSMANSHIP -->
+<section class="font-monts bg-[#070707] text-white py-16 sm:py-20 lg:py-20">
+  <div class="px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+    <!-- Text -->
+    <div>
+      <h2 class="font-serif font-normal text-4xl sm:text-5xl lg:text-[46px] leading-tight">Our Craftsmanship.</h2>
+      <div class="mt-5 w-10 h-px bg-[#C5A059]"></div>
+      <p class="mt-6 max-w-[450px] text-[14px] leading-[1.9] font-light text-white/45">Have a design in mind? Let our craftsmen transform your idea into a one-of-a-kind piece.</p>
+      <a href="#contact" class="inline-block mt-9 bg-[#C9A55A] text-[#111] text-[11px] font-medium tracking-[.2em] uppercase px-7 py-4 hover:bg-[#d4b36c] transition">Start Your Custom Design</a>
+    </div>
+
+    <!-- Image -->
+    <img src="assets/craftmanship.jpg" alt="Jewellery sketches and tools on a craftsman's workbench"
+         class="w-full h-64 sm:h-80 lg:h-[380px] xl:h-[420px] object-cover border border-white/10">
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="font-monts bg-[#FAF8F5] py-16 sm:py-20 lg:py-24">
+  <div class="px-6 lg:px-12">
+
+    <!-- Heading -->
+    <p class="text-[11px] font-monts font-[550] tracking-[2.75px] leading-4 uppercase text-[#C5A059]">The Difference</p>
+    <h2 class="mt-3 font-serif font-normal text-4xl sm:text-5xl text-ink">Why Choose Gold Forum</h2>
+
+    <!-- Items -->
+    <div class="mt-12 sm:mt-14 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+
+      <div class="border-t border-[#D6D3D1] pt-7">
+        <h3 class="font-serif text-[22px] leading-tight text-ink">Timeless Elegance</h3>
+        <p class="mt-3 max-w-[280px] text-[14px] leading-relaxed font-light font-monts text-[#57534E]">Jewelry designed to represent sophistication and grace.</p>
+      </div>
+
+      <div class="border-t border-[#D6D3D1] pt-7">
+        <h3 class="font-serif text-[22px] leading-tight text-ink">Genuine Gemstones</h3>
+        <p class="mt-3 max-w-[280px] text-[14px] leading-relaxed font-light font-monts text-[#57534E]">Carefully selected authentic stones for exceptional brilliance.</p>
+      </div>
+
+      <div class="border-t border-[#D6D3D1] pt-7">
+        <h3 class="font-serif text-[22px] leading-tight text-ink">Trusted Quality</h3>
+        <p class="mt-3 max-w-[280px] text-[14px] leading-relaxed font-light font-monts text-[#57534E]">Quality-focused craftsmanship and carefully finished jewelry.</p>
+      </div>
+
+      <div class="border-t border-[#D6D3D1] pt-7">
+        <h3 class="font-serif text-[22px] leading-tight text-ink">Exclusive Collections</h3>
+        <p class="mt-3 max-w-[280px] text-[14px] leading-relaxed font-light font-monts text-[#57534E]">Distinctive designs created for customers who appreciate individuality.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="bg-[#EFEAE1] border-y border-[#D6D3D1] py-20 lg:py-24">
+  <div class="px-6 lg:px-12">
+    <p class="label font-[550] leading-4 mb-4">CRAFTSMANSHIP</p>
+    <h2 class="font-serif text-4xl lg:text-5xl">From Idea to Heirloom</h2>
+
+    <div class="relative mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+      <!-- one continuous line on desktop -->
+      <span class="hidden lg:block absolute top-[7px] left-0 right-0 h-px bg-[#D6D3D1]"></span>
+
+      <!-- 01 -->
+      <div class="relative pt-10">
+        <span class="lg:hidden absolute top-[7px] left-0 right-0 h-px bg-gold/30"></span>
+        <span class="absolute top-0 left-0 w-4 h-4 rounded-full bg-gold"></span>
+        <p class="font-monts text-[12px] text-[#C5A059] tracking-[1.2px] leading-4 font-[550]">01</p>
+        <h3 class="font-serif text-[24px] leading-8 font-[400] mt-2">Concept</h3>
+        <p class="mt-2 font-monts text-[12px] leading-5 text-[#57534E] font-light">Understanding your vision and requirements.</p>
+      </div>
+
+      <!-- 02 -->
+      <div class="relative pt-10">
+        <span class="lg:hidden absolute top-[7px] left-0 right-0 h-px bg-gold/30"></span>
+        <span class="absolute top-0 left-0 w-4 h-4 rounded-full bg-gold"></span>
+        <p class="font-monts text-[12px] text-[#C5A059] tracking-[1.2px] leading-4 font-[550]">02</p>
+        <h3 class="font-serif text-[24px] leading-8 font-[400] mt-2">Design</h3>
+        <p class="mt-2 font-monts text-[12px] leading-5 text-[#57534E] font-light">Creating the design and refining every detail.</p>
+      </div>
+
+      <!-- 03 -->
+      <div class="relative pt-10">
+        <span class="lg:hidden absolute top-[7px] left-0 right-0 h-px bg-gold/30"></span>
+        <span class="absolute top-0 left-0 w-4 h-4 rounded-full bg-gold"></span>
+        <p class="font-monts text-[12px] text-[#C5A059] tracking-[1.2px] leading-4 font-[550]">03</p>
+        <h3 class="font-serif text-[24px] leading-8 font-[400] mt-2">Craft</h3>
+        <p class="mt-2 font-monts text-[12px] leading-5 text-[#57534E] font-light">Expert artisans bring the design to life.</p>
+      </div>
+
+      <!-- 04 -->
+      <div class="relative pt-10">
+        <span class="lg:hidden absolute top-[7px] left-0 right-0 h-px bg-gold/30"></span>
+        <span class="absolute top-0 left-0 w-4 h-4 rounded-full bg-gold"></span>
+        <p class="font-monts text-[12px] text-[#C5A059] tracking-[1.2px] leading-4 font-[550]">04</p>
+        <h3 class="font-serif text-[24px] leading-8 font-[400] mt-2">Finish</h3>
+        <p class="mt-2 font-monts text-[12px] leading-5 text-[#57534E] font-light">Final detailing and quality inspection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="font-monts bg-[#F8F6F1] py-16 sm:py-20 lg:py-22">
+  <div class="px-6 lg:px-12">
+
+    <!-- Heading -->
+    <p class="label font-[550]">Who We Serve</p>
+    <h2 class="mt-2 font-serif font-normal text-4xl sm:text-5xl text-ink">Crafted for Every Partnership</h2>
+
+    <!-- Cards -->
+    <div class="mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8">
+
+      <article>
+        <img src="assets/serve1.jpg" alt="Retail" class="w-full h-64 sm:h-72 lg:h-[292px] object-cover shadow-[0_2px_8px_rgba(0,0,0,.12)]">
+        <h3 class="mt-5 font-serif text-[22px] leading-tight text-ink">Retail</h3>
+        <p class="mt-2 font-monts max-w-[390px] text-[14px] leading-5 font-light text-[#57534E]">Elegant jewelry for individual customers and special occasions.</p>
+      </article>
+
+      <article>
+        <img src="assets/serve2.jpg" alt="Wholesale" class="w-full h-64 sm:h-72 lg:h-[292px] object-cover shadow-[0_2px_8px_rgba(0,0,0,.12)]">
+        <h3 class="mt-5 font-serif text-[22px] leading-tight text-ink">Wholesale</h3>
+        <p class="mt-2 font-monts max-w-[390px] text-[14px] leading-5 font-light text-[#57534E]">Reliable jewelry solutions for businesses and retailers.</p>
+      </article>
+
+      <article>
+        <img src="assets/serve3.jpg" alt="Custom Manufacturing" class="w-full h-64 sm:h-72 lg:h-[292px] object-cover shadow-[0_2px_8px_rgba(0,0,0,.12)]">
+        <h3 class="mt-5 font-serif text-[22px] leading-tight text-ink">Custom Manufacturing</h3>
+        <p class="mt-2 font-monts max-w-[390px] text-[14px] leading-5 font-light text-[#57534E]">Personalized and bulk manufacturing based on specific requirements.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section id="contact" class="font-monts bg-[#EFE7DB] py-14 sm:py-20 px-4 sm:px-5">
+  <div class="bg-[#F8F6F1] border border-[#D6D3D1] shadow-[0_10px_25px_rgba(0,0,0,.12)] p-6 sm:p-10 lg:p-14">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+ 
+      <!-- Left -->
+      <div>
+        <p class="label font-[550]">Enquiry</p>
+        <h2 class="mt-5 max-w-[400px] font-serif font-normal text-[40px] sm:text-5xl leading-[1.05] text-ink">Let's Create Something Extraordinary</h2>
+        <p class="mt-5 font-monts max-w-[430px] text-[14px] leading-[22px] font-light text-[#57534E]">Whether you're looking for a timeless piece, a customized design, or a manufacturing partner, we'd love to hear from you.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#enquiry-form" class="inline-block bg-[#C5A059] text-[#080807] text-[12px] font-[550] tracking-[2.4px] uppercase px-8 py-4 hover:bg-[#d4b36c] transition">Enquire Now</a>
+          <a href="tel:+919746777622" class="inline-flex items-center gap-2 border border-[#A8A29E] text-[#080807] text-[12px] font-[550] tracking-[2.4px] uppercase px-8 py-4 hover:bg-black/5 transition">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>Call Us
+          </a>
+        </div>
+      </div>
+ 
+      <!-- Form -->
+      <form id="enquiry-form"
+      action="https://formspree.io/f/moejvvpg" method="POST"
+       class="bg-white border border-black/10 p-6 sm:p-9 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
+
+         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden">
+
+        <label class="block">
+          <span class="block text-[11px]  tracking-[.55px] leading-4 font-[500] uppercase text-[#78716C]">Name</span>
+          <input type="text" required placeholder="Your full name" class="mt-3 w-full bg-[#F8F6F1] border border-black/10 px-4 py-3 text-[13px] placeholder:text-black/30 focus:outline-none focus:border-[#C5A059]">
+        </label>
+ 
+        <label class="block">
+  <span class="block text-[11px] tracking-[.55px] leading-4 font-[500] uppercase text-[#78716C]">Phone Number</span>
+  <input type="tel" name="phone" required
+    inputmode="numeric" maxlength="10" pattern="[6-9][0-9]{9}"
+    title="Enter a valid 10-digit mobile number"
+    placeholder="10-digit mobile number"
+    oninput="this.value=this.value.replace(/\D/g,'')"
+    class="mt-3 w-full bg-[#F8F6F1] border border-black/10 px-4 py-3 text-[13px] placeholder:text-black/30 focus:outline-none focus:border-[#C5A059]">
+</label>
+ 
+        <label class="block">
+          <span class="block text-[11px]  tracking-[.55px] leading-4 font-[500] uppercase text-[#78716C]">Email</span>
+          <input type="email" required placeholder="name@domain.com" class="mt-3 w-full bg-[#F8F6F1] border border-black/10 px-4 py-3 text-[13px] placeholder:text-black/30 focus:outline-none focus:border-[#C5A059]">
+        </label>
+ 
+        <label class="block">
+          <span class="block text-[11px]  tracking-[.55px] leading-4 font-[500] uppercase text-[#78716C]">Requirement</span>
+          <span class="relative block mt-3">
+            <select required class="w-full appearance-none bg-[#F8F6F1] cursor-pointer border border-black/10 pl-4 pr-10 py-3 text-[13px] text-ink focus:outline-none focus:border-[#C5A059]">
+              <option>Custom Jewellery Design</option>
+              <option>Retail</option>
+              <option>Wholesale</option>
+              <option>Custom Manufacturing</option>
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><path d="m5 9 7 7 7-7"/></svg>
+          </span>
+        </label>
+ 
+        <label class="block sm:col-span-2">
+          <span class="block text-[11px]  tracking-[.55px] font-[500] leading-4 uppercase text-[#78716C]">Message</span>
+          <textarea rows="4" placeholder="Tell us more about what you are looking for..." class="mt-3 w-full h-28 resize-none bg-[#F8F6F1] border border-black/10 px-4 py-3 text-[13px] placeholder:text-black/30 focus:outline-none focus:border-[#C5A059]"></textarea>
+        </label>
+ 
+        <div class="sm:col-span-2">
+  <button id="submitBtn" type="submit" class="bg-[#C5A059] text-[#080807] text-[12px] font-[550] tracking-[2.4px] uppercase w-[220px] py-4 hover:bg-[#d4b36c] transition disabled:opacity-60 disabled:cursor-not-allowed">Submit Enquiry</button>
+  <p id="formError" class="hidden mt-4 text-[12px] text-red-700">Something went wrong. Please try again or call us directly.</p>
+</div>
+      </form>
+    </div>
+  </div>
+</section>
+ 
+<!-- LOCATION -->
+<section class="font-monts bg-[#F7F5F0] py-16 sm:py-20 lg:py-24">
+  <div class="px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center">
+
+    <!-- Details -->
+    <div>
+      <h2 class="font-serif font-normal text-4xl sm:text-5xl text-ink">Gold Forum</h2>
+      <div class="mt-6 w-9 h-px bg-[#C5A059]"></div>
+
+      <p class="mt-9 text-[10px] font-[550] tracking-[2.5px] uppercase leading-4 text-[#C5A059]">Address</p>
+      <p class="mt-1 text-[14px] font-light text-[#44403C]">Coimbatore, Tamil Nadu</p>
+
+      <p class="mt-9 text-[10px] font-[550] tracking-[2.5px] uppercase leading-4 text-[#C5A059]">Phone</p>
+      <a href="tel:+919746777622" class="mt-1 font-[500] block text-[14px] text-[#292524]">+91 97467 77622</a>
+
+      <p class="mt-9 text-[10px] font-[550] tracking-[2.5px] uppercase leading-4 text-[#C5A059]">Email</p>
+      <a href="mailto:info@goldforum.in" class="mt-1 font-[500] block text-[14px] text-[#292524]">info@goldforum.in</a>
+
+      <a href="https://maps.google.com/?q=Coimbatore" target="_blank" rel="noopener"
+         class="inline-block mt-9 text-[10px] font-[550] tracking-[2.5px] uppercase text-[#C5A059] hover:opacity-80 transition">Get Directions <span class="ml-1">→</span></a>
+    </div>
+
+    <!-- Map placeholder -->
+    <div class="bg-[#EDE5DA] border border-black/10 h-64 sm:h-72 lg:h-[297px] flex flex-col items-center justify-center text-center px-4">
+      <span class="w-9 h-9 rounded-full border border-[#C5A059]/60 flex items-center justify-center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      </span>
+      <p class="mt-4 text-[11px] font-medium tracking-[.25em] uppercase text-ink/80">Coimbatore, Tamil Nadu</p>
+      <p class="mt-1 text-[11px] font-light text-muted/80">Our Flagship Design &amp; Manufacturing Facility</p>
+    </div>
+  </div>
+</section>
+
+<footer class="font-monts bg-[#080807] text-white/70 border border-[#080807]">
+  <div class="px-6 lg:px-5 pt-14 sm:pt-16">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[468fr_282fr_330fr] gap-10 md:gap-12 lg:gap-8">
+
+      <!-- Brand -->
+<div class="text-center md:text-left">
+        <a href="#home" class="block w-fit mx-auto md:mx-0">
+          <img
+            src="assets/goldlogo.png"
+            alt="Gold Forum"
+            class="h-10 sm:h-14 w-auto"
+          >
+        </a>
+
+        <p class="mt-5 text-[12px] font-light leading-5 text-[#A8A29E]">Elegance Redefined — Jewelry for Every Moment.</p>
+  <div class="mt-5 flex justify-center md:justify-start gap-4">
+          <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:border-[#C5A059] hover:text-[#C5A059] transition">
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 1.26175C8.869 1.26175 9.09067 1.26875 9.82917 1.30258C11.7262 1.38892 12.6122 2.289 12.6986 4.172C12.7324 4.90992 12.7388 5.13158 12.7388 7.00058C12.7388 8.87017 12.7318 9.09125 12.6986 9.82917C12.6117 11.7104 11.7279 12.6122 9.82917 12.6986C9.09067 12.7324 8.87017 12.7394 7 12.7394C5.131 12.7394 4.90933 12.7324 4.17142 12.6986C2.26975 12.6117 1.38833 11.7075 1.302 9.82858C1.26817 9.09067 1.26117 8.86958 1.26117 7C1.26117 5.131 1.26875 4.90992 1.302 4.17142C1.38892 2.289 2.27267 1.38833 4.17142 1.302C4.90992 1.26875 5.131 1.26175 7 1.26175ZM7 0C5.09892 0 4.86092 0.00816667 4.11425 0.042C1.57208 0.158667 0.15925 1.56917 0.0425833 4.11367C0.00816667 4.86092 0 5.09892 0 7C0 8.90108 0.00816667 9.13967 0.042 9.88633C0.158667 12.4285 1.56917 13.8413 4.11367 13.958C4.86092 13.9918 5.09892 14 7 14C8.90108 14 9.13967 13.9918 9.88633 13.958C12.4262 13.8413 13.8425 12.4308 13.9574 9.88633C13.9918 9.13967 14 8.90108 14 7C14 5.09892 13.9918 4.86092 13.958 4.11425C13.8437 1.57442 12.4314 0.15925 9.88692 0.0425833C9.13967 0.00816667 8.90108 0 7 0V0ZM7 3.4055C5.01492 3.4055 3.4055 5.01492 3.4055 7C3.4055 8.98508 5.01492 10.5951 7 10.5951C8.98508 10.5951 10.5945 8.98567 10.5945 7C10.5945 5.01492 8.98508 3.4055 7 3.4055ZM7 9.33333C5.71142 9.33333 4.66667 8.28917 4.66667 7C4.66667 5.71142 5.71142 4.66667 7 4.66667C8.28858 4.66667 9.33333 5.71142 9.33333 7C9.33333 8.28917 8.28858 9.33333 7 9.33333ZM10.7368 2.42375C10.2725 2.42375 9.89625 2.8 9.89625 3.26375C9.89625 3.7275 10.2725 4.10375 10.7368 4.10375C11.2006 4.10375 11.5763 3.7275 11.5763 3.26375C11.5763 2.8 11.2006 2.42375 10.7368 2.42375Z" fill="#A8A29E"/>
+</svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:border-[#C5A059] hover:text-[#C5A059] transition">
+<svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.75 4.66667H0V7H1.75V14H4.66667V7H6.79117L7 4.66667H4.66667V3.69425C4.66667 3.13483 4.95833 2.91667 5.54167 2.91667H7V0H4.77867C2.67867 0 1.75 0.923417 1.75 2.69208V4.66667Z" fill="#A8A29E"/>
+</svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:border-[#C5A059] hover:text-[#C5A059] transition">
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.905 1.45833C2.905 2.26392 2.2575 2.91667 1.45833 2.91667C0.659167 2.91667 0.0116667 2.26392 0.0116667 1.45833C0.0116667 0.653333 0.659167 0 1.45833 0C2.2575 0 2.905 0.653333 2.905 1.45833ZM2.91667 4.08333H0V13.4167H2.91667V4.08333ZM7.57283 4.08333H4.67483V13.4167H7.57342V8.51725C7.57342 5.79308 11.0903 5.57025 11.0903 8.51725V13.4167H14V7.50692C14 2.91025 8.7955 3.07767 7.57283 5.34042V4.08333Z" fill="#A8A29E"/>
+</svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigate -->
+      <div>
+        <p class="text-[11px] font-semibold tracking-[2.75px] uppercase text-[#C5A059]">Navigate</p>
+        <ul class="mt-5 space-y-[10px] text-[12px] font-light leading-4 text-[#D6D3D1]">
+          <li><a href="#home" class="hover:text-[#C5A059] transition">Home</a></li>
+          <li><a href="#about" class="hover:text-[#C5A059] transition">About</a></li>
+          <li><a href="#collections" class="hover:text-[#C5A059] transition">Collections</a></li>
+          <li><a href="#services" class="hover:text-[#C5A059] transition">Services</a></li>
+          <li><a href="#contact" class="hover:text-[#C5A059] transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="text-[11px] font-semibold tracking-[2.75px] uppercase text-[#C5A059]">Contact</p>
+        <ul class="mt-5 space-y-[12px] text-[12px] font-light leading-4 text-[#D6D3D1]">
+          <li>Coimbatore, Tamil Nadu</li>
+          <li><a href="tel:+919746777622" class="hover:text-[#C5A059] transition">+91 97467 77622</a></li>
+          <li><a href="mailto:info@goldforum.in" class="hover:text-[#C5A059] transition">info@goldforum.in</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 sm:mt-14 border-t border-[#20201F] py-6 flex flex-col sm:flex-row sm:justify-between gap-2 text-[10px] tracking-[.2em] uppercase">
+      <p class="text-[#A8A29E]">© Gold Forum. All rights reserved.</p>
+      <p class="text-[#C5A059CC]">Crafted with precision</p>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- THANK YOU MODAL -->
+<div id="thanksModal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/60 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
+  <div class="font-monts w-full max-w-[640px] bg-[#E8E7E4] rounded-xl px-6 sm:px-12 py-12 sm:py-16 text-center shadow-2xl max-h-[92vh] overflow-y-auto">
+    <div class="mx-auto w-[88px] h-[88px] rounded-full bg-white border border-[#C5A059]/25 flex items-center justify-center">
+      <span class="w-[70px] h-[70px] rounded-full border border-[#C5A059]/25 flex items-center justify-center">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg>
+      </span>
+    </div>
+    <p class="mt-8 text-[10px] font-medium tracking-[.3em] uppercase text-[#C5A059]">Enquiry Received</p>
+    <h3 id="thanksTitle" class="mt-4 font-serif font-normal text-4xl sm:text-[40px] text-ink">Thank You</h3>
+    <div class="mt-6 flex items-center justify-center gap-3" aria-hidden="true">
+      <span class="w-9 h-px bg-[#C5A059]/50"></span><span class="w-1 h-1 rotate-45 bg-[#C5A059]"></span><span class="w-9 h-px bg-[#C5A059]/50"></span>
+    </div>
+    <p class="mt-7 mx-auto max-w-[460px] text-[14px] leading-[1.8] font-light text-[#5d5850]">Thank you for contacting Gold Forum. Your enquiry has been successfully received. Our team will get in touch with you shortly.</p>
+    <button id="closeThanks" type="button" class="mt-9 bg-[#C9A22E] text-white text-[11px] font-semibold tracking-[.2em] uppercase px-12 py-4 rounded-[3px] hover:brightness-95 transition">Close</button>
+    <p class="mt-6 text-[11px] font-light text-[#8a847a]">We appreciate your interest in Gold Forum.</p>
+  </div>
+</div>
+
+<script>
+  const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+  b.addEventListener('click',()=>m.classList.toggle('hidden'));
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.add('hidden')));
+
+
+(function(){
+  const form=document.getElementById('enquiry-form'),
+        btn=document.getElementById('submitBtn'),
+        err=document.getElementById('formError'),
+        modal=document.getElementById('thanksModal'),
+        closeBtn=document.getElementById('closeThanks');
+
+  if(!form||!btn) return;
+
+  const showErr=s=>{ if(err) err.classList.toggle('hidden',!s); };
+  const openModal=()=>{
+    if(!modal) return;
+    modal.classList.remove('hidden');modal.classList.add('flex');
+    document.body.style.overflow='hidden';
+    if(closeBtn) closeBtn.focus();
+  };
+  const closeModal=()=>{
+    if(!modal) return;
+    modal.classList.add('hidden');modal.classList.remove('flex');
+    document.body.style.overflow='';
+  };
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    showErr(false);
+    const original=btn.textContent;
+    btn.disabled=true;
+    btn.textContent='Submitting...';
+    try{
+      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){form.reset();openModal();}
+      else{showErr(true);}
+    }catch(_){showErr(true);}
+    btn.disabled=false;
+    btn.textContent=original;
+  });
+
+  if(closeBtn) closeBtn.addEventListener('click',closeModal);
+  if(modal) modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal&&!modal.classList.contains('hidden'))closeModal();});
+})();
+</script>
+</body>
+</html>
