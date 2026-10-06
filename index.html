@@ -61,13 +61,17 @@ tailwind.config = { theme: { extend: {
 <section id="home" class="relative min-h-screen min-h-[100svh] pt-14 flex items-center text-white " style="background:url('assets/goldhero.png') center/cover no-repeat, #2a1d10">
   <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(14,13,12,.94) 0%,rgba(14,13,12,.82) 40%,rgba(8,8,8,.7) 100%)"></div>
   <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(10,10,10,.85) 0%,rgba(10,10,10,0) 22%,rgba(10,10,10,0) 70%,rgba(8,8,8,.9) 100%)"></div>
-  <div class="relative px-6 lg:px-12 pt-24 pb-16 w-full">
-    <p class="label text-[12px] font-[500] tracking-[3.3px] mb-6">The Art of Fine Jewellery</p>
-    <h1 class="font-serif font-[200] text-4xl sm:text-5xl lg:text-[72px] leading-[1.05] max-w-[670px]">Timeless Elegance, Crafted to Perfection</h1>
-    <p class="mt-6 font-monts  max-w-[550px] text-sm md:text-[16px] leading-relaxed text-[#D1D5DB] font-[200]">Discover exquisite jewelry crafted with precision, passion, and timeless artistry.</p>
-    <div class="mt-9 flex flex-wrap gap-4 font-monts font-[500]">
-      <a href="#collections" class="btn font-[500] text-[12px] tracking-[2.4px] btn-gold">Explore Collections</a>
-      <a href="#contact" class="btn btn-line tracking-[2.4px] ">Enquire Now</a>
+
+  <!-- NEW: extra dark layer on mobile/tablet only, so text stays readable -->
+  <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
+
+  <div class="relative px-6 lg:px-12 pt-10 sm:pt-16 lg:pt-24 pb-12 lg:pb-16 w-full">
+    <p class="label text-[11px] sm:text-[12px] font-[500] tracking-[2.5px] sm:tracking-[3.3px] mb-5 lg:mb-6">The Art of Fine Jewellery</p>
+    <h1 class="font-serif font-[200] text-[40px] sm:text-5xl lg:text-[72px] leading-[1.1] lg:leading-[1.05] max-w-[670px]">Timeless Elegance, Crafted to Perfection</h1>
+    <p class="mt-5 lg:mt-6 font-monts max-w-[550px] text-sm md:text-[16px] leading-relaxed text-[#D1D5DB] font-[200]">Discover exquisite jewelry crafted with precision, passion, and timeless artistry.</p>
+    <div class="mt-8 lg:mt-9 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 font-monts font-[500]">
+      <a href="#collections" class="btn font-[500] text-[12px] tracking-[2.4px] btn-gold text-center">Explore Collections</a>
+      <a href="#contact" class="btn btn-line tracking-[2.4px] text-center">Enquire Now</a>
     </div>
   </div>
 </section>
