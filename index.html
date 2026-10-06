@@ -31,6 +31,17 @@ tailwind.config = { theme: { extend: {
   .g7{background:linear-gradient(160deg,#4a3a2a,#c19a4e 50%,#2a1d10)}
   .g8{background:linear-gradient(160deg,#a9815a,#4a3220 70%)}
   :focus-visible{outline:2px solid #B8935A;outline-offset:3px}
+
+#mobileMenu{
+  max-height:0; opacity:0; visibility:hidden; overflow:hidden;
+  transform:translateY(-10px);
+  transition:max-height .65s ease, opacity .55s ease, transform .65s ease, visibility 0s linear .65s;
+}
+#mobileMenu.open{
+  max-height:420px; opacity:1; visibility:visible;
+  transform:translateY(0);
+  transition:max-height .65s ease, opacity .55s ease, transform .65s ease, visibility 0s;
+}
 </style>
 </head>
 <body class="antialiased">
@@ -52,16 +63,21 @@ tailwind.config = { theme: { extend: {
     <button id="menuBtn" class="lg:hidden" aria-label="Menu"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h20M3 13h20M3 18h20"/></svg></button>
   </div>
 
-  <div id="mobileMenu" class="hidden lg:hidden bg-ink/95 px-6 py-6 flex flex-col gap-4 text-[11px] tracking-[.22em] uppercase">
-    <a href="#about">About</a><a href="#collections">Collections</a><a href="#services">Services</a><a href="#why">Why Gold Forum</a><a href="#contact">Contact</a>
+ <div id="mobileMenu" class="lg:hidden bg-ink/95">
+  <div class="px-6 py-6 flex flex-col gap-4 text-[11px] tracking-[.22em] uppercase">
+    <a href="#about">About</a>
+    <a href="#collections">Collections</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Gold Forum</a>
+    <a href="#contact">Contact</a>
   </div>
+</div>
 </header>
 
 <!-- HERO -->
 <section id="home" class="relative min-h-screen min-h-[100svh] pt-14 flex items-center text-white " style="background:url('assets/goldhero.png') center/cover no-repeat, #2a1d10">
-  <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(14,13,12,.94) 0%,rgba(14,13,12,.82) 40%,rgba(8,8,8,.7) 100%)"></div>
-  <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(10,10,10,.85) 0%,rgba(10,10,10,0) 22%,rgba(10,10,10,0) 70%,rgba(8,8,8,.9) 100%)"></div>
-
+  <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(14,13,12,.8) 0%,rgba(14,13,12,.62) 40%,rgba(8,8,8,.45) 100%)"></div>
+<div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(10,10,10,.7) 0%,rgba(10,10,10,0) 22%,rgba(10,10,10,0) 70%,rgba(8,8,8,.75) 100%)"></div>
   <!-- NEW: extra dark layer on mobile/tablet only, so text stays readable -->
   <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
 
@@ -594,23 +610,23 @@ const b = document.getElementById('menuBtn'),
       m = document.getElementById('mobileMenu');
 
 // open / close with the hamburger button
-b.addEventListener('click', () => m.classList.toggle('hidden'));
+b.addEventListener('click', () => m.classList.toggle('open'));
 
 // close when a menu link is clicked
 m.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => m.classList.add('hidden'))
+  a.addEventListener('click', () => m.classList.remove('open'))
 );
 
 // close when clicking outside the menu and the button
 document.addEventListener('click', e => {
   if (!m.contains(e.target) && !b.contains(e.target)) {
-    m.classList.add('hidden');
+    m.classList.remove('open');
   }
 });
 
 // close with Esc
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') m.classList.add('hidden');
+  if (e.key === 'Escape') m.classList.remove('open');
 });
 
 
