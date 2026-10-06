@@ -589,11 +589,32 @@ tailwind.config = { theme: { extend: {
 </div>
 
 <script>
-  const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
-  b.addEventListener('click',()=>m.classList.toggle('hidden'));
-  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.add('hidden')));
+/* ---------- Mobile menu ---------- */
+const b = document.getElementById('menuBtn'),
+      m = document.getElementById('mobileMenu');
+
+// open / close with the hamburger button
+b.addEventListener('click', () => m.classList.toggle('hidden'));
+
+// close when a menu link is clicked
+m.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => m.classList.add('hidden'))
+);
+
+// close when clicking outside the menu and the button
+document.addEventListener('click', e => {
+  if (!m.contains(e.target) && !b.contains(e.target)) {
+    m.classList.add('hidden');
+  }
+});
+
+// close with Esc
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') m.classList.add('hidden');
+});
 
 
+/* ---------- Enquiry form + thank-you modal ---------- */
 (function(){
   const form=document.getElementById('enquiry-form'),
         btn=document.getElementById('submitBtn'),
